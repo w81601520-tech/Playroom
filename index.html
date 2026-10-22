@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10111d" />
+    <title>Playroom — Mini Game Arcade</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Playroom home"><span class="brand-mark">✦</span> playroom</a>
+        <div class="top-note"><span class="live-dot"></span> 5 hand-crafted games. Big fun.</div>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">YOUR LITTLE BREAK STARTS HERE</p>
+            <h1>Pick a game.<br /><span>Make a moment.</span></h1>
+            <p class="hero-description">Five little worlds, five different ways to play. Pick a favorite, chase a high score, and take a joyful little break.</p>
+            <button class="button button-primary" id="randomGame">🎲 Surprise me <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="spark spark-one">✦</div><div class="spark spark-two">✳</div>
+            <div class="art-card card-back"></div>
+            <div class="art-card card-front"><span class="art-emoji">🪩</span><span class="art-label">GOOD<br />VIBES</span></div>
+            <div class="art-orbit">✦</div><div class="art-caption">A pocket-sized<br />playground <span>↗</span></div>
+          </div>
+          <div class="hero-stats"><div><strong>5</strong><span>mini games</span></div><i></i><div><strong>5</strong><span>ways to play</span></div><i></i><div><strong>∞</strong><span>reasons to smile</span></div></div>
+        </section>
+
+        <section class="arcade" id="arcade">
+          <div class="section-heading">
+            <div><p class="eyebrow">THE ARCADE</p><h2>Find your next favorite</h2></div>
+            <div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search games..." aria-label="Search games" /><kbd>/</kbd></div>
+          </div>
+          <div class="filters" id="filters" aria-label="Filter games"></div>
+          <div class="results-line"><span id="resultCount">5 games</span><span>Five originals, made to be replayed <span class="tiny-star">✦</span></span></div>
+          <div class="game-grid" id="gameGrid"></div>
+          <div class="empty-state" id="emptyState" hidden>No games found. Try another search or category.</div>
+        </section>
+      </main>
+      <footer><a class="brand" href="#top"><span class="brand-mark">✦</span> playroom</a><span>Made for the joy of a little break.</span><a href="#top">Back to top ↑</a></footer>
+    </div>
+
+    <div class="modal" id="gameModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close></div>
+      <section class="game-dialog" role="dialog" aria-modal="true" aria-labelledby="gameTitle">
+        <button class="close-button" id="closeModal" aria-label="Close game">×</button>
+        <div class="dialog-top"><span class="dialog-category" id="gameCategory"></span><span class="score-pill">SCORE <strong id="score">0</strong></span></div>
+        <h2 id="gameTitle">Game</h2>
+        <p class="game-instructions" id="gameInstructions"></p>
+        <div class="game-stage" id="gameStage"></div>
+        <div class="game-footer"><span id="gameStatus">Ready when you are.</span><span class="timer" id="gameTimer">⏱ <strong>20</strong>s</span></div>
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
